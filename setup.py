@@ -1,13 +1,11 @@
 #!/usr/bin/env python
+from distutils.core import setup
+from catkin_pkg.python_setup import generate_distutils_setup
 
-from setuptools import setup
-
-setup(name='opensim_server',
-      version='1.0',
-      description='Opensim Server',
-      author='Baptiste Busch',
-      author_email='baptiste.busch@epfl.ch',
+d = generate_distutils_setup(
       packages=['opensim_server'],
-      #scripts=['scripts/examples_animation.py', 'scripts/examples_vector_field.py'],
+      scripts=['scripts/kinect_recorder'],
       package_dir={'': 'src'}
-     )
+    )
+
+setup(**d)
